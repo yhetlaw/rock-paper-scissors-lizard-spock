@@ -1,6 +1,6 @@
 .choices {
-  width: 300px;
-  height: 300px;
+  width: 25rem;
+  height: 25rem;
   margin-top: 8rem;
   position: relative;
   display: flex;
@@ -11,7 +11,7 @@
     left: 0;
     top: 0;
   }
-  .choices__scissors {
+  .choices__play {
     width: 180px;
     height: 180px;
     display: flex;
@@ -21,8 +21,7 @@
     cursor: pointer;
     border-radius: 100px;
     position: absolute;
-    top: -4rem;
-    .scissors__main {
+    .choices__background {
       width: 140px;
       height: 140px;
       background-color: white;
@@ -33,15 +32,55 @@
       z-index: 3;
       border-top: 10px solid rgb(179, 179, 179);
     }
-    .scissors__border {
-      width: 180px;
-      height: 180px;
-      background: linear-gradient(to bottom, $scissors1, $scissors2);
-      border-radius: 150px;
-      position: absolute;
-      top: 0;
-      z-index: 2;
-      border-bottom: 8px solid hsla(39, 99%, 27%, 0.719);
-    }
+  }
+  .scissors__border {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(to bottom, $scissors1, $scissors2);
+    border-radius: 150px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-bottom: 8px solid hsla(39, 99%, 27%, 0.719);
+  }
+  .paper__border {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(to bottom, $paper1, $paper2);
+    border-radius: 150px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-bottom: 8px solid rgba(25, 47, 161, 0.767);
+  }
+  .spock__border {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(to bottom, $spock1, $spock2);
+    border-radius: 150px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-bottom: 8px solid hsla(188, 59%, 31%, 0.815);
+  }
+  .lizard__border {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(to bottom, $lizard1, $lizard2);
+    border-radius: 150px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-bottom: 8px solid hsl(261, 56%, 36%);
+  }
+  .rock__border {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(to bottom, $rock1, $rock2);
+    border-radius: 150px;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-bottom: 8px solid hsl(349, 68%, 28%);
   }
 }

@@ -8,7 +8,7 @@ $scissors2: hsl(40, 84%, 53%);
 $paper1: hsl(230, 89%, 62%);
 $paper2: hsl(230, 89%, 65%);
 
-//Rock gradient 
+//Rock gradient
 $rock1: hsl(349, 71%, 52%);
 $rock2: hsl(349, 70%, 56%);
 
@@ -17,9 +17,8 @@ $lizard1: hsl(261, 73%, 60%);
 $lizard2: hsl(261, 72%, 63%);
 
 //Cyan gradient
-$cyan1: hsl(189, 59%, 53%);
-$cyan2: hsl(189, 58%, 57%);
-
+$spock1: hsl(189, 59%, 53%);
+$spock2: hsl(189, 58%, 57%);
 
 //Neutral colors
 $dark-text: hsl(229, 25%, 31%);
@@ -29,7 +28,6 @@ $header-outline: hsl(217, 16%, 45%);
 //Background gradient
 $background1: hsl(214, 47%, 23%);
 $background2: hsl(237, 49%, 15%);
-
 
 //Mixin breakpoints for media queries
 $desktop: 1366px;
@@ -45,4 +43,3 @@ $mobile: 375px;
     @content;
   }
 }
-
