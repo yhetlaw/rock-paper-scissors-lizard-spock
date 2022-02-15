@@ -19,6 +19,7 @@ const Choices = ({ handleScissorsClick, style }) => {
       <div className='choices__pentagon'>
         <Image src={Pentagon} width={800} height={800} alt='Pentagon' />
       </div>
+      {/* Scissors */}
       <Play
         style={{ top: '-6rem' }}
         image={Scissors}

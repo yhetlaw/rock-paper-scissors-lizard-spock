@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Board from '../components/Board';
 import Background from '../components/Background';
 import Choices from '../components/Choices';
+import Rules from '../components/Rules';
 //Image
 
 const Home = () => {
@@ -26,6 +27,7 @@ const Home = () => {
         <Board />
         <Choices style={choices} handleScissorsClick={handleScissorsClick} />
       </div>
+      <Rules />
     </>
   );
 };
