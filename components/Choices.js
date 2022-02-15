@@ -10,12 +10,12 @@ import Spock from '../images/icon-spock.svg';
 import Lizard from '../images/icon-lizard.svg';
 import Rock from '../images/icon-rock.svg';
 
-const Choices = () => {
-  const handleScissorsClick = () => {
+const Choices = ({ handleScissorsClick, style }) => {
+  /* const handleScissorsClick = () => {
     alert('clicou em scissors');
-  };
+  }; */
   return (
-    <div className='choices'>
+    <div className='choices' style={style}>
       <div className='choices__pentagon'>
         <Image src={Pentagon} width={800} height={800} alt='Pentagon' />
       </div>
