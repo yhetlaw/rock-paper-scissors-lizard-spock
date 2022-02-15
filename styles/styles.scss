@@ -1,0 +1,14 @@
+//Abstract
+@import './sass/abstract/variables';
+//Base
+@import './sass/base/typography';
+//Components
+@import './sass/components/board';
+@import './sass/components/background';
+@import './sass/components/choices';
+//layout
+@import './sass/layout/main';
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}

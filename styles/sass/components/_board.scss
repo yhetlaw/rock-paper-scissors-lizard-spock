@@ -1,0 +1,45 @@
+.board {
+  width: 50rem;
+  height: 12rem;
+  border: 2px solid gray;
+  border-radius: 15px;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .board__text {
+    width: 60%;
+    height: 85%;
+    margin: 2rem;
+
+    p {
+      margin: 0;
+      text-transform: uppercase;
+      color: white;
+      font-size: 2.3rem;
+      line-height: 2rem;
+    }
+  }
+  .board__scoreboard {
+    width: 40%;
+    height: 80%;
+    background-color: white;
+    border-radius: 15px;
+    margin: 2rem;
+
+    .board__title {
+      text-transform: uppercase;
+      text-align: center;
+      color: $score-text;
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+    .board__score {
+      font-size: 6rem;
+      margin-top: -2rem;
+      text-align: center;
+    }
+  }
+}
