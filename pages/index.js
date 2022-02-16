@@ -19,22 +19,30 @@ const Home = () => {
   const [clickedChoice, setClickedChoice] = useState(Scissors);
   const [border, setBorder] = useState('');
   const choicesArray = [Rock, Paper, Scissors, Lizard, Spock];
-  const [randomUrl, setRandomUrl] = useState(choicesArray[Math.floor(randomNumber(0, 5))]);
+  const [randomUrl, setRandomUrl] = useState(choicesArray[Math.floor(Math.random() * (5 - 0) + 0)]);
 
-  function randomNumber(mn, mx) {
-    return Math.random() * (mx - mn) + mn;
-  }
+  let randomSrc = randomUrl.src;
+  let randomBorder = '';
 
-  let chosenBorder;
-  if (randomUrl) {
-  }
+  //Defining borders from randomUrl
+  randomSrc.indexOf('lizard') !== -1
+    ? (randomBorder = 'lizard')
+    : randomSrc.indexOf('rock') !== -1
+    ? (randomBorder = 'rock')
+    : randomSrc.indexOf('paper') !== -1
+    ? (randomBorder = 'paper')
+    : randomSrc.indexOf('spock') !== -1
+    ? (randomBorder = 'spock')
+    : randomSrc.indexOf('scissors')
+    ? (randomBorder = 'scissors')
+    : console.log('error defining borders');
 
   const handleScissorsClick = () => {
     setChoices({ display: 'none' });
     setFight({ display: 'flex' });
     setClickedChoice(Scissors);
     setBorder('scissors');
-    match('scissors', 'paper');
+    match('scissors', randomBorder);
   };
 
   const handlePaperClick = () => {
@@ -42,12 +50,36 @@ const Home = () => {
     setFight({ display: 'flex' });
     setClickedChoice(Paper);
     setBorder('paper');
-    match('paper', 'paper');
+    match('paper', randomBorder);
+  };
+
+  const handleSpockClick = () => {
+    setChoices({ display: 'none' });
+    setFight({ display: 'flex' });
+    setClickedChoice(Spock);
+    setBorder('spock');
+    match('spock', randomBorder);
+  };
+
+  const handleRockClick = () => {
+    setChoices({ display: 'none' });
+    setFight({ display: 'flex' });
+    setClickedChoice(Rock);
+    setBorder('rock');
+    match('rock', randomBorder);
+  };
+
+  const handleLizardClick = () => {
+    setChoices({ display: 'none' });
+    setFight({ display: 'flex' });
+    setClickedChoice(Lizard);
+    setBorder('lizard');
+    match('lizard', randomBorder);
   };
 
   const match = (play1, play2) => {
     console.log(`the play1 is ${play1}, the play2 is ${play2}`);
-    /* (play1 === 'scissors' && play2 === 'paper') || (play1 === 'paper' && play2 === 'scissors')
+    (play1 === 'scissors' && play2 === 'paper') || (play1 === 'paper' && play2 === 'scissors')
       ? alert('the winner is scissors')
       : (play1 === 'scissors' && play2 === 'rock') || (play1 === 'rock' && play2 === 'scissors')
       ? alert('the winner is rock')
@@ -57,7 +89,7 @@ const Home = () => {
       ? alert('the winner is scissors')
       : (play1 === 'scissors' && play2 === 'scissors') || (play1 === 'scissors' && play2 === 'scissors')
       ? alert('the match is tied')
-      : alert('kek'); */
+      : alert('kek');
   };
 
   return (
@@ -70,7 +102,14 @@ const Home = () => {
       <Background />
       <div className='main'>
         <Board />
-        <Choices style={choices} handleScissorsClick={handleScissorsClick} handlePaperClick={handlePaperClick} />
+        <Choices
+          style={choices}
+          handleScissorsClick={handleScissorsClick}
+          handlePaperClick={handlePaperClick}
+          handleSpockClick={handleSpockClick}
+          handleRockClick={handleRockClick}
+          handleLizardClick={handleLizardClick}
+        />
         <Fight style={fight} image1={clickedChoice} border1={border} image2={randomUrl} border2='paper' />
       </div>
       <Rules />
