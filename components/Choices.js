@@ -22,6 +22,7 @@ const Choices = ({ handleScissorsClick, style }) => {
       {/* Scissors */}
       <Play
         style={{ top: '-6rem' }}
+        choicesClassName='choices__play '
         image={Scissors}
         borderClassName='scissors__border'
         onClick={handleScissorsClick}
@@ -29,6 +30,7 @@ const Choices = ({ handleScissorsClick, style }) => {
       {/* Paper */}
       <Play
         style={{ top: '4rem', right: '-6rem' }}
+        choicesClassName='choices__play paper'
         image={Paper}
         borderClassName='paper__border'
         onClick={handleScissorsClick}
@@ -36,6 +38,7 @@ const Choices = ({ handleScissorsClick, style }) => {
       {/* Spock */}
       <Play
         style={{ top: '4rem', left: '-6rem' }}
+        choicesClassName='choices__play spock'
         image={Spock}
         borderClassName='spock__border'
         onClick={handleScissorsClick}
@@ -43,6 +46,7 @@ const Choices = ({ handleScissorsClick, style }) => {
       {/* Lizard */}
       <Play
         style={{ top: '18rem', left: '-1rem' }}
+        choicesClassName='choices__play lizard'
         image={Lizard}
         borderClassName='lizard__border'
         onClick={handleScissorsClick}
@@ -50,6 +54,7 @@ const Choices = ({ handleScissorsClick, style }) => {
       {/* Rock */}
       <Play
         style={{ top: '18rem', right: '-1rem' }}
+        choicesClassName='choices__play rock'
         image={Rock}
         borderClassName='rock__border'
         onClick={handleScissorsClick}

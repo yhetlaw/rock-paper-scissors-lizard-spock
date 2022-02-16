@@ -25,7 +25,6 @@
     cursor: pointer;
     border-radius: 100px;
     position: absolute;
-    border: 1px solid red;
     @include mobile {
       width: 135px;
       height: 135px;
@@ -115,5 +114,33 @@
       width: 135px;
       height: 135px;
     }
+  }
+}
+
+.paper {
+  @include mobile {
+    margin-top: -3rem;
+    margin-right: 2rem;
+  }
+}
+
+.spock {
+  @include mobile {
+    margin-top: -3rem;
+    margin-left: 2rem;
+  }
+}
+
+.lizard {
+  @include mobile {
+    margin-top: -8rem;
+    margin-left: -1.5rem;
+  }
+}
+
+.rock {
+  @include mobile {
+    margin-top: -8rem;
+    margin-right: -1.5rem;
   }
 }
