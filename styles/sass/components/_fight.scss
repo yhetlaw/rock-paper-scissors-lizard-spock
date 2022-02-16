@@ -1,0 +1,126 @@
+.fight {
+  height: 300px;
+  width: 70%;
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .fight__left {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .fight__right {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.choices__play {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 100px;
+  position: absolute;
+
+  @include mobile {
+    width: 135px;
+    height: 135px;
+  }
+}
+
+.choices__background {
+  width: 140px;
+  height: 140px;
+  background-color: white;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  border-top: 10px solid rgb(179, 179, 179);
+  @include mobile {
+    width: 105px;
+    height: 105px;
+  }
+}
+
+.scissors__border {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(to bottom, $scissors1, $scissors2);
+  border-radius: 150px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border-bottom: 8px solid hsla(39, 99%, 27%, 0.719);
+  @include mobile {
+    width: 135px;
+    height: 135px;
+  }
+}
+.paper__border {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(to bottom, $paper1, $paper2);
+  border-radius: 150px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border-bottom: 8px solid rgba(25, 47, 161, 0.767);
+  @include mobile {
+    width: 135px;
+    height: 135px;
+  }
+}
+.spock__border {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(to bottom, $spock1, $spock2);
+  border-radius: 150px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border-bottom: 8px solid hsla(188, 59%, 31%, 0.815);
+  @include mobile {
+    width: 135px;
+    height: 135px;
+  }
+}
+.lizard__border {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(to bottom, $lizard1, $lizard2);
+  border-radius: 150px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border-bottom: 8px solid hsl(261, 56%, 36%);
+  @include mobile {
+    width: 135px;
+    height: 135px;
+  }
+}
+.rock__border {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(to bottom, $rock1, $rock2);
+  border-radius: 150px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  border-bottom: 8px solid hsl(349, 68%, 28%);
+  @include mobile {
+    width: 135px;
+    height: 135px;
+  }
+}

@@ -10,10 +10,7 @@ import Spock from '../images/icon-spock.svg';
 import Lizard from '../images/icon-lizard.svg';
 import Rock from '../images/icon-rock.svg';
 
-const Choices = ({ handleScissorsClick, style }) => {
-  /* const handleScissorsClick = () => {
-    alert('clicou em scissors');
-  }; */
+const Choices = ({ handleScissorsClick, handlePaperClick, style }) => {
   return (
     <div className='choices' style={style}>
       <div className='choices__pentagon'>
@@ -33,7 +30,7 @@ const Choices = ({ handleScissorsClick, style }) => {
         choicesClassName='choices__play paper'
         image={Paper}
         borderClassName='paper__border'
-        onClick={handleScissorsClick}
+        onClick={handlePaperClick}
       />
       {/* Spock */}
       <Play
