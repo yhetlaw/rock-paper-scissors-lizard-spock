@@ -93,7 +93,7 @@ const Home = () => {
   };
 
   const handlePlayAgainClick = () => {
-    setChoices({ display: 'block' });
+    setChoices({ display: 'flex' });
     setFight({ display: 'none' });
   };
 
