@@ -80,16 +80,21 @@ const Home = () => {
   const match = (play1, play2) => {
     console.log(`the play1 is ${play1}, the play2 is ${play2}`);
     (play1 === 'scissors' && play2 === 'paper') || (play1 === 'paper' && play2 === 'scissors')
-      ? alert('the winner is scissors')
+      ? console.log('the winner is scissors')
       : (play1 === 'scissors' && play2 === 'rock') || (play1 === 'rock' && play2 === 'scissors')
-      ? alert('the winner is rock')
+      ? console.log('the winner is rock')
       : (play1 === 'scissors' && play2 === 'spock') || (play1 === 'spock' && play2 === 'scissors')
-      ? alert('the winner is spock')
+      ? console.log('the winner is spock')
       : (play1 === 'scissors' && play2 === 'lizard') || (play1 === 'lizard' && play2 === 'scissors')
-      ? alert('the winner is scissors')
+      ? console.log('the winner is scissors')
       : (play1 === 'scissors' && play2 === 'scissors') || (play1 === 'scissors' && play2 === 'scissors')
-      ? alert('the match is tied')
-      : alert('kek');
+      ? console.log('the match is tied')
+      : console.log('kek');
+  };
+
+  const handlePlayAgainClick = () => {
+    setChoices({ display: 'block' });
+    setFight({ display: 'none' });
   };
 
   return (
@@ -110,7 +115,14 @@ const Home = () => {
           handleRockClick={handleRockClick}
           handleLizardClick={handleLizardClick}
         />
-        <Fight style={fight} image1={clickedChoice} border1={border} image2={randomUrl} border2='paper' />
+        <Fight
+          style={fight}
+          image1={clickedChoice}
+          border1={border}
+          image2={randomUrl}
+          border2='paper'
+          handlePlayAgainClick={handlePlayAgainClick}
+        />
       </div>
       <Rules />
     </>

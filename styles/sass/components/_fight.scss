@@ -1,29 +1,83 @@
 .fight {
-  height: 300px;
-  width: 70%;
-  margin-top: 10rem;
+  height: 30rem;
+  width: 40%;
+  margin-top: 6rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  .fight__left {
-    width: 33%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  justify-content: center;
+  animation-duration: 4s;
+  animation-name: slide;
+  animation-fill-mode: forwards;
+  position: relative;
+  @keyframes slide {
+    40% {
+      width: 40%;
+    }
+    100% {
+      width: 100%;
+    }
   }
-  .fight__right {
-    width: 33%;
-    height: 100%;
+  .fight__choice {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    @include mobile {
+      width: 20%;
+      margin: 80px;
+    }
+    .fight__title {
+      color: white;
+      font-size: 3rem;
+      margin-bottom: 28rem;
+      text-transform: uppercase;
+    }
+  }
+  .fight__result {
+    width: 25%;
+    height: 15rem;
+    position: absolute;
+    left: 40;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    animation-duration: 4s;
+    animation-name: appear;
+    animation-fill-mode: forwards;
+    @keyframes appear {
+      0% {
+        opacity: 0;
+      }
+      80% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .result__title {
+      text-transform: uppercase;
+      color: white;
+      font-size: 3rem;
+    }
+    .result__button {
+      background-color: white;
+      color: black;
+      text-transform: uppercase;
+      border: none;
+      width: 12rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
   }
 }
 
-.choices__play {
-  width: 180px;
-  height: 180px;
+.fight__play {
+  width: 240px;
+  height: 240px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,8 +93,8 @@
 }
 
 .choices__background {
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   background-color: white;
   border-radius: 100px;
   display: flex;
@@ -55,8 +109,8 @@
 }
 
 .scissors__border {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
   background: linear-gradient(to bottom, $scissors1, $scissors2);
   border-radius: 150px;
   position: absolute;
@@ -69,8 +123,8 @@
   }
 }
 .paper__border {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
   background: linear-gradient(to bottom, $paper1, $paper2);
   border-radius: 150px;
   position: absolute;
@@ -83,8 +137,8 @@
   }
 }
 .spock__border {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
   background: linear-gradient(to bottom, $spock1, $spock2);
   border-radius: 150px;
   position: absolute;
@@ -97,8 +151,8 @@
   }
 }
 .lizard__border {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
   background: linear-gradient(to bottom, $lizard1, $lizard2);
   border-radius: 150px;
   position: absolute;
@@ -111,8 +165,8 @@
   }
 }
 .rock__border {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
   background: linear-gradient(to bottom, $rock1, $rock2);
   border-radius: 150px;
   position: absolute;

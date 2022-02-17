@@ -26,7 +26,7 @@ const Choices = ({
       {/* Scissors */}
       <Play
         style={{ top: '-6rem' }}
-        choicesClassName='choices__play '
+        choicesClassName='choices__play'
         image={Scissors}
         borderClassName='scissors__border'
         onClick={handleScissorsClick}
