@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 //Components
 import Board from '../components/Board';
 import Background from '../components/Background';
@@ -19,21 +19,21 @@ const Home = () => {
   const [clickedChoice, setClickedChoice] = useState(Scissors);
   const [border, setBorder] = useState('');
   const choicesArray = [Rock, Paper, Scissors, Lizard, Spock];
-  const [randomUrl, setRandomUrl] = useState(choicesArray[Math.floor(Math.random() * (5 - 0) + 0)]);
+  const [randomUrl, setRandomUrl] = useState(choicesArray[Math.floor(Math.random() * choicesArray.length)]);
 
   let randomSrc = randomUrl.src;
   let randomBorder = '';
 
   //Defining borders from randomUrl
-  randomSrc.indexOf('lizard') !== -1
+  randomSrc.indexOf('lizard') >= 0
     ? (randomBorder = 'lizard')
-    : randomSrc.indexOf('rock') !== -1
+    : randomSrc.indexOf('rock') >= 0
     ? (randomBorder = 'rock')
-    : randomSrc.indexOf('paper') !== -1
+    : randomSrc.indexOf('paper') >= 0
     ? (randomBorder = 'paper')
-    : randomSrc.indexOf('spock') !== -1
+    : randomSrc.indexOf('spock') >= 0
     ? (randomBorder = 'spock')
-    : randomSrc.indexOf('scissors')
+    : randomSrc.indexOf('scissors') >= 0
     ? (randomBorder = 'scissors')
     : console.log('error defining borders');
 
@@ -95,7 +95,10 @@ const Home = () => {
   const handlePlayAgainClick = () => {
     setChoices({ display: 'flex' });
     setFight({ display: 'none' });
+    console.clear();
   };
+
+  console.log('the second border in index is', randomBorder);
 
   return (
     <>
@@ -119,8 +122,8 @@ const Home = () => {
           style={fight}
           image1={clickedChoice}
           border1={border}
-          image2={randomUrl}
-          border2='paper'
+          image2={randomSrc}
+          border2={randomBorder}
           handlePlayAgainClick={handlePlayAgainClick}
         />
       </div>

@@ -34,6 +34,76 @@
       margin-bottom: 28rem;
       text-transform: uppercase;
     }
+    .scissors__border {
+      width: 250px;
+      height: 250px;
+      background: linear-gradient(to bottom, $scissors1, $scissors2);
+      border-radius: 150px;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      border-bottom: 8px solid hsla(39, 99%, 27%, 0.719);
+      @include mobile {
+        width: 135px;
+        height: 135px;
+      }
+    }
+    .paper__border {
+      width: 250px;
+      height: 250px;
+      background: linear-gradient(to bottom, $paper1, $paper2);
+      border-radius: 150px;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      border-bottom: 8px solid rgba(25, 47, 161, 0.767);
+      @include mobile {
+        width: 135px;
+        height: 135px;
+      }
+    }
+    .spock__border {
+      width: 250px;
+      height: 250px;
+      background: linear-gradient(to bottom, $spock1, $spock2);
+      border-radius: 150px;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      border-bottom: 8px solid hsla(188, 59%, 31%, 0.815);
+      @include mobile {
+        width: 135px;
+        height: 135px;
+      }
+    }
+    .lizard__border {
+      width: 250px;
+      height: 250px;
+      background: linear-gradient(to bottom, $lizard1, $lizard2);
+      border-radius: 150px;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      border-bottom: 8px solid hsl(261, 56%, 36%);
+      @include mobile {
+        width: 135px;
+        height: 135px;
+      }
+    }
+    .rock__border {
+      width: 250px;
+      height: 250px;
+      background: linear-gradient(to bottom, $rock1, $rock2);
+      border-radius: 150px;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      border-bottom: 8px solid hsl(349, 68%, 28%);
+      @include mobile {
+        width: 135px;
+        height: 135px;
+      }
+    }
   }
   .fight__result {
     width: 25%;
@@ -105,76 +175,5 @@
   @include mobile {
     width: 105px;
     height: 105px;
-  }
-}
-
-.scissors__border {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(to bottom, $scissors1, $scissors2);
-  border-radius: 150px;
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  border-bottom: 8px solid hsla(39, 99%, 27%, 0.719);
-  @include mobile {
-    width: 135px;
-    height: 135px;
-  }
-}
-.paper__border {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(to bottom, $paper1, $paper2);
-  border-radius: 150px;
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  border-bottom: 8px solid rgba(25, 47, 161, 0.767);
-  @include mobile {
-    width: 135px;
-    height: 135px;
-  }
-}
-.spock__border {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(to bottom, $spock1, $spock2);
-  border-radius: 150px;
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  border-bottom: 8px solid hsla(188, 59%, 31%, 0.815);
-  @include mobile {
-    width: 135px;
-    height: 135px;
-  }
-}
-.lizard__border {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(to bottom, $lizard1, $lizard2);
-  border-radius: 150px;
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  border-bottom: 8px solid hsl(261, 56%, 36%);
-  @include mobile {
-    width: 135px;
-    height: 135px;
-  }
-}
-.rock__border {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(to bottom, $rock1, $rock2);
-  border-radius: 150px;
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  border-bottom: 8px solid hsl(349, 68%, 28%);
-  @include mobile {
-    width: 135px;
-    height: 135px;
   }
 }

@@ -23,26 +23,35 @@
     }
   }
   .board__scoreboard {
-    width: 40%;
+    width: 14rem;
     height: 80%;
     background-color: white;
     border-radius: 15px;
-    margin: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    @include mobile {
+      width: 10rem;
+      margin-right: 1rem;
+    }
     .board__title {
       text-transform: uppercase;
-      text-align: center;
       color: $score-text;
       font-size: 1.6rem;
       letter-spacing: 2px;
       font-weight: 600;
+      position: absolute;
+      top: 10%;
       @include mobile {
         font-size: 1.4rem;
       }
     }
     .board__score {
       font-size: 6rem;
-      margin-top: -2rem;
-      text-align: center;
+      margin: 0;
+      position: absolute;
+      bottom: -5%;
       @include mobile {
         font-size: 5rem;
         margin-top: -1rem;

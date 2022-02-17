@@ -1,20 +1,20 @@
 import Play from './Play';
 import Button from 'react-bootstrap/Button';
-import Router from 'next/router';
 
 const Fight = ({ style, image1, image2, border1, border2, handlePlayAgainClick }) => {
   let firstBorder = `${border1}__border`;
-  console.log(border1);
   let secondBorder = `${border2}__border`;
+
+  console.log('the second border in fight is', secondBorder);
   return (
     <div className='fight' style={style}>
       <div className='fight__choice'>
         <h1 className='fight__title'>you picked</h1>
-        <Play choicesClassName='fight__play' image={image1} borderClassName={firstBorder} />
+        <Play choicesClassName='fight__play' image={image1} borderClassName2={firstBorder} />
       </div>
       <div className='fight__choice'>
         <h1 className='fight__title'>the house picked</h1>
-        <Play choicesClassName='fight__play' image={image2} borderClassName={secondBorder} />
+        <Play choicesClassName='fight__play' image={image2} borderClassName2={secondBorder} />
       </div>
       <div className='fight__result'>
         <h1 className='result__title'>you lose</h1>
