@@ -115,9 +115,7 @@ const Home = () => {
     setRandomUrl(choicesArray[Math.floor(Math.random() * choicesArray.length)]);
   };
 
-  console.log('the second border in index is', randomBorder);
-
-  console.log(score);
+  const handleNumberChange = () => {};
 
   return (
     <>
@@ -128,7 +126,7 @@ const Home = () => {
       </Head>
       <Background />
       <div className='main'>
-        <Board score={score} />
+        <Board score={score} handleNumberChange={handleNumberChange} />
         <Choices
           style={choices}
           handleScissorsClick={() => handleClick(Scissors)}
