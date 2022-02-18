@@ -1,4 +1,4 @@
-const Board = () => {
+const Board = ({ score, handleNumberChange }) => {
   return (
     <div className='board'>
       <div className='board__text'>
@@ -12,7 +12,9 @@ const Board = () => {
       </div>
       <div className='board__scoreboard'>
         <h1 className='board__title'>score</h1>
-        <p className='board__score'>12</p>
+        <p className='board__score' onChange={handleNumberChange}>
+          {score}
+        </p>
       </div>
     </div>
   );

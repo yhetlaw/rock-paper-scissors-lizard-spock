@@ -25,6 +25,7 @@ const Home = () => {
   const [randomUrl, setRandomUrl] = useState(choicesArray[Math.floor(Math.random() * choicesArray.length)]);
   const [win, setWin] = useState(false);
   const [tie, setTie] = useState(false);
+  const [score, setScore] = useState(0);
 
   let randomSrc = randomUrl.src;
   console.log('this is randomSrc', randomSrc);
@@ -61,36 +62,42 @@ const Home = () => {
       : valueSrc.includes('lizard')
       ? (strValue = 'lizard')
       : console.log('error');
-
-    (strValue == 'scissors' && enemy == 'paper') ||
-    (strValue == 'scissors' && enemy == 'lizard') ||
-    (strValue == 'paper' && enemy == 'rock') ||
-    (strValue == 'paper' && enemy == 'spock') ||
-    (strValue == 'lizard' && enemy == 'spock') ||
-    (strValue == 'lizard' && enemy == 'paper') ||
-    (strValue == 'spock' && enemy == 'scissors') ||
-    (strValue == 'spock' && enemy == 'rock') ||
-    (strValue == 'rock' && enemy == 'scissors') ||
-    (strValue == 'rock' && enemy == 'lizard')
-      ? setWin(true)
-      : (strValue == 'scissors' && enemy == 'rock') ||
-        (strValue == 'scissors' && enemy == 'spock') ||
-        (strValue == 'paper' && enemy == 'lizard') ||
-        (strValue == 'paper' && enemy == 'scissors') ||
-        (strValue == 'lizard' && enemy == 'scissors') ||
-        (strValue == 'lizard' && enemy == 'rock') ||
-        (strValue == 'spock' && enemy == 'paper') ||
-        (strValue == 'spock' && enemy == 'lizard') ||
-        (strValue == 'rock' && enemy == 'paper') ||
-        (strValue == 'rock' && enemy == 'spock')
-      ? setWin(false)
-      : (strValue == 'scissors' && enemy == 'scissors') ||
-        (strValue == 'paper' && enemy == 'paper') ||
-        (strValue == 'lizard' && enemy == 'lizard') ||
-        (strValue == 'spock' && enemy == 'spock') ||
-        (strValue == 'rock' && enemy == 'rock')
-      ? setTie(true)
-      : console.log('error');
+    if (
+      (strValue == 'scissors' && enemy == 'paper') ||
+      (strValue == 'scissors' && enemy == 'lizard') ||
+      (strValue == 'paper' && enemy == 'rock') ||
+      (strValue == 'paper' && enemy == 'spock') ||
+      (strValue == 'lizard' && enemy == 'spock') ||
+      (strValue == 'lizard' && enemy == 'paper') ||
+      (strValue == 'spock' && enemy == 'scissors') ||
+      (strValue == 'spock' && enemy == 'rock') ||
+      (strValue == 'rock' && enemy == 'scissors') ||
+      (strValue == 'rock' && enemy == 'lizard')
+    ) {
+      setWin(true);
+      setScore(score + 1);
+    } else if (
+      (strValue == 'scissors' && enemy == 'rock') ||
+      (strValue == 'scissors' && enemy == 'spock') ||
+      (strValue == 'paper' && enemy == 'lizard') ||
+      (strValue == 'paper' && enemy == 'scissors') ||
+      (strValue == 'lizard' && enemy == 'scissors') ||
+      (strValue == 'lizard' && enemy == 'rock') ||
+      (strValue == 'spock' && enemy == 'paper') ||
+      (strValue == 'spock' && enemy == 'lizard') ||
+      (strValue == 'rock' && enemy == 'paper') ||
+      (strValue == 'rock' && enemy == 'spock')
+    ) {
+      setWin(false);
+    } else if (
+      (strValue == 'scissors' && enemy == 'scissors') ||
+      (strValue == 'paper' && enemy == 'paper') ||
+      (strValue == 'lizard' && enemy == 'lizard') ||
+      (strValue == 'spock' && enemy == 'spock') ||
+      (strValue == 'rock' && enemy == 'rock')
+    ) {
+      setTie(true);
+    }
 
     setChoices({ display: 'none' });
     setFight({ display: 'flex' });
@@ -99,11 +106,18 @@ const Home = () => {
   };
 
   const handlePlayAgainClick = () => {
-    Router.reload(window.location.pathname);
+    //Router.reload(window.location.pathname);
+
     console.clear();
+    setChoices({ display: 'flex' });
+    setFight({ display: 'none' });
+    setTie(false);
+    setRandomUrl(choicesArray[Math.floor(Math.random() * choicesArray.length)]);
   };
 
   console.log('the second border in index is', randomBorder);
+
+  console.log(score);
 
   return (
     <>
@@ -114,7 +128,7 @@ const Home = () => {
       </Head>
       <Background />
       <div className='main'>
-        <Board />
+        <Board score={score} />
         <Choices
           style={choices}
           handleScissorsClick={() => handleClick(Scissors)}
