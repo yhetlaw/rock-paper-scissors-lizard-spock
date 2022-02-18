@@ -16,18 +16,19 @@ import Lizard from '../images/icon-lizard.svg';
 import Spock from '../images/icon-spock.svg';
 
 const Home = () => {
+  const choicesArray = [Rock, Paper, Scissors, Lizard, Spock];
+
   const [choices, setChoices] = useState();
   const [fight, setFight] = useState({ display: 'none' });
   const [clickedChoice, setClickedChoice] = useState(Scissors);
   const [border, setBorder] = useState('');
-  const choicesArray = [Rock, Paper, Scissors, Lizard, Spock];
   const [randomUrl, setRandomUrl] = useState(choicesArray[Math.floor(Math.random() * choicesArray.length)]);
   const [win, setWin] = useState(false);
   const [tie, setTie] = useState(false);
 
   let randomSrc = randomUrl.src;
-
   console.log('this is randomSrc', randomSrc);
+
   let randomBorder = '';
 
   //Defining borders from randomUrl
@@ -43,12 +44,12 @@ const Home = () => {
     ? (randomBorder = 'scissors')
     : console.log('error');
 
-  console.log('this is randomBorder', randomBorder);
-
   const handleClick = (value) => {
     let enemy = randomBorder;
     let valueSrc = value.src;
     let strValue;
+
+    //If url includes any of the words
     valueSrc.includes('scissors')
       ? (strValue = 'scissors')
       : valueSrc.includes('rock')
@@ -60,48 +61,44 @@ const Home = () => {
       : valueSrc.includes('lizard')
       ? (strValue = 'lizard')
       : console.log('error');
-    console.log('value', value, 'strValue', strValue);
 
-    let tie = 'The match is tied';
-    strValue == 'scissors' && enemy == 'paper'
+    (strValue == 'scissors' && enemy == 'paper') ||
+    (strValue == 'scissors' && enemy == 'lizard') ||
+    (strValue == 'paper' && enemy == 'rock') ||
+    (strValue == 'paper' && enemy == 'spock') ||
+    (strValue == 'lizard' && enemy == 'spock') ||
+    (strValue == 'lizard' && enemy == 'paper') ||
+    (strValue == 'spock' && enemy == 'scissors') ||
+    (strValue == 'spock' && enemy == 'rock') ||
+    (strValue == 'rock' && enemy == 'scissors') ||
+    (strValue == 'rock' && enemy == 'lizard')
       ? setWin(true)
-      : strValue == 'scissors' && enemy == 'rock'
+      : (strValue == 'scissors' && enemy == 'rock') ||
+        (strValue == 'scissors' && enemy == 'spock') ||
+        (strValue == 'paper' && enemy == 'lizard') ||
+        (strValue == 'paper' && enemy == 'scissors') ||
+        (strValue == 'lizard' && enemy == 'scissors') ||
+        (strValue == 'lizard' && enemy == 'rock') ||
+        (strValue == 'spock' && enemy == 'paper') ||
+        (strValue == 'spock' && enemy == 'lizard') ||
+        (strValue == 'rock' && enemy == 'paper') ||
+        (strValue == 'rock' && enemy == 'spock')
       ? setWin(false)
-      : strValue == 'scissors' && enemy == 'lizard'
-      ? setWin(true)
-      : strValue == 'scissors' && enemy == 'spock'
-      ? setWin(false)
-      : strValue == 'scissors' && enemy == 'scissors'
+      : (strValue == 'scissors' && enemy == 'scissors') ||
+        (strValue == 'paper' && enemy == 'paper') ||
+        (strValue == 'lizard' && enemy == 'lizard') ||
+        (strValue == 'spock' && enemy == 'spock') ||
+        (strValue == 'rock' && enemy == 'rock')
       ? setTie(true)
-      : strValue == 'scissors' && enemy == 'paper'
-      ? setWin(true)
       : console.log('error');
 
     setChoices({ display: 'none' });
     setFight({ display: 'flex' });
     setClickedChoice(value);
     setBorder(strValue);
-    match(strValue, randomBorder);
-  };
-
-  const match = (play1, play2) => {
-    console.log(`the play1 is ${play1}, the play2 is ${play2}`);
-    (play1 === 'scissors' && play2 === 'paper') || (play1 === 'paper' && play2 === 'scissors')
-      ? console.log('the winner is scissors')
-      : (play1 === 'scissors' && play2 === 'rock') || (play1 === 'rock' && play2 === 'scissors')
-      ? console.log('the winner is rock')
-      : (play1 === 'scissors' && play2 === 'spock') || (play1 === 'spock' && play2 === 'scissors')
-      ? console.log('the winner is spock')
-      : (play1 === 'scissors' && play2 === 'lizard') || (play1 === 'lizard' && play2 === 'scissors')
-      ? console.log('the winner is scissors')
-      : (play1 === 'scissors' && play2 === 'scissors') || (play1 === 'scissors' && play2 === 'scissors')
-      ? console.log('the match is tied')
-      : console.log('kek');
   };
 
   const handlePlayAgainClick = () => {
-    /* setChoices({ display: 'flex' });
-    setFight({ display: 'none' }); */
     Router.reload(window.location.pathname);
     console.clear();
   };

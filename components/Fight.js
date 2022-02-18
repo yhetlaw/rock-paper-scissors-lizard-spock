@@ -17,13 +17,8 @@ const Fight = ({ style, image1, image2, border1, border2, handlePlayAgainClick, 
         <Play choicesClassName='fight__play' image={image2} borderClassName2={secondBorder} />
       </div>
       <div className='fight__result'>
-        {/* {win ? (
-          <h1 className='result__title'>you win</h1>
-        ) : (
-          <h1 className='result__title'>you lose</h1>
-        )} */}
         {tie ? (
-          <h1 className='result__title'>The match is tied</h1>
+          <h1 className='result__title'>you tied</h1>
         ) : win ? (
           <h1 className='result__title'>you win</h1>
         ) : (
