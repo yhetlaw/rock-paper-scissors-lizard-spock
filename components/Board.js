@@ -1,4 +1,4 @@
-const Board = ({ score, handleNumberChange }) => {
+const Board = ({ score }) => {
   return (
     <div className='board'>
       <div className='board__text'>

@@ -1,11 +1,23 @@
 import Play from './Play';
 import Button from 'react-bootstrap/Button';
 
-const Fight = ({ style, image1, image2, border1, border2, handlePlayAgainClick, win, tie }) => {
+const Fight = ({ style, image1, image2, border1, handlePlayAgainClick, win, tie }) => {
   let firstBorder = `${border1}__border`;
-  let secondBorder = `${border2}__border`;
+  let secondBorder;
 
-  console.log('the second border in fight is', secondBorder);
+  //Defining borders from randomSrc
+  image2.includes('lizard')
+    ? (secondBorder = 'lizard__border')
+    : image2.includes('paper')
+    ? (secondBorder = 'paper__border')
+    : image2.includes('spock')
+    ? (secondBorder = 'spock__border')
+    : image2.includes('rock')
+    ? (secondBorder = 'rock__border')
+    : image2.includes('scissors')
+    ? (secondBorder = 'scissors__border')
+    : console.log('error');
+
   return (
     <div className='fight' style={style}>
       <div className='fight__choice'>

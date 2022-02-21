@@ -28,25 +28,23 @@ const Home = () => {
   const [score, setScore] = useState(0);
 
   let randomSrc = randomUrl.src;
-  console.log('this is randomSrc', randomSrc);
-
-  let randomBorder = '';
+  let randomEnemy = '';
 
   //Defining borders from randomUrl
   randomSrc.includes('lizard')
-    ? (randomBorder = 'lizard')
+    ? (randomEnemy = 'lizard')
     : randomSrc.includes('paper')
-    ? (randomBorder = 'paper')
+    ? (randomEnemy = 'paper')
     : randomSrc.includes('spock')
-    ? (randomBorder = 'spock')
+    ? (randomEnemy = 'spock')
     : randomSrc.includes('rock')
-    ? (randomBorder = 'rock')
+    ? (randomEnemy = 'rock')
     : randomSrc.includes('scissors')
-    ? (randomBorder = 'scissors')
+    ? (randomEnemy = 'scissors')
     : console.log('error');
 
   const handleClick = (value) => {
-    let enemy = randomBorder;
+    let enemy = randomEnemy;
     let valueSrc = value.src;
     let strValue;
 
@@ -77,7 +75,7 @@ const Home = () => {
       setWin(true);
       setTimeout(function () {
         setScore(score + 1);
-      }, 3500); //run this after 3 seconds
+      }, 3300); //run this after 3 seconds
     } else if (
       (strValue == 'scissors' && enemy == 'rock') ||
       (strValue == 'scissors' && enemy == 'spock') ||
@@ -138,7 +136,6 @@ const Home = () => {
           image1={clickedChoice}
           border1={border}
           image2={randomSrc}
-          border2={randomBorder}
           handlePlayAgainClick={handlePlayAgainClick}
           win={win}
           tie={tie}

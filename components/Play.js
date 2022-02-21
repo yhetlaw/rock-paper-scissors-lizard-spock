@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 const Play = ({ style, choicesClassName, image, borderClassName, borderClassName2, onClick }) => {
-  console.log('playjs', borderClassName2);
   return (
     <div className={choicesClassName} style={style} onClick={onClick}>
       <div className='choices__background'>
