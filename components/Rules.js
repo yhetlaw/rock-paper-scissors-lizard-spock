@@ -25,9 +25,11 @@ const Rules = () => {
 
   return (
     <>
-      <Button className='rules' onClick={handleShow}>
-        Rules
-      </Button>
+      <div className='rules__wrapper'>
+        <Button className='rules' onClick={handleShow}>
+          Rules
+        </Button>
+      </div>
 
       <MyVerticallyCenteredModal show={show} onHide={handleClose} />
     </>

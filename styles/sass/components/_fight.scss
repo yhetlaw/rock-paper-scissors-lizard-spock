@@ -33,6 +33,11 @@
       font-size: 3rem;
       margin-bottom: 28rem;
       text-transform: uppercase;
+      @include mobile {
+        font-size: 2rem;
+        margin-bottom: 20rem;
+        text-align: center;
+      }
     }
     .scissors__border {
       width: 250px;
@@ -128,10 +133,19 @@
         opacity: 1;
       }
     }
+    @include mobile {
+      margin-top: 7rem;
+      height: 10rem;
+      justify-content: space-between;
+    }
     .result__title {
       text-transform: uppercase;
       color: white;
       font-size: 3rem;
+      text-align: center;
+      @include mobile {
+        font-size: 2rem;
+      }
     }
     .result__button {
       background-color: white;

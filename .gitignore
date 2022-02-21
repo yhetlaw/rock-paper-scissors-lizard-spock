@@ -36,3 +36,4 @@ yarn-error.log*
 .README-template.node_modules
 
 .style-guide.md
+.vercel
