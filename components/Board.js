@@ -12,9 +12,7 @@ const Board = ({ score, handleNumberChange }) => {
       </div>
       <div className='board__scoreboard'>
         <h1 className='board__title'>score</h1>
-        <p className='board__score' onChange={handleNumberChange}>
-          {score}
-        </p>
+        <p className='board__score'>{score}</p>
       </div>
     </div>
   );

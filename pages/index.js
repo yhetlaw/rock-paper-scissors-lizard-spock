@@ -75,7 +75,9 @@ const Home = () => {
       (strValue == 'rock' && enemy == 'lizard')
     ) {
       setWin(true);
-      setScore(score + 1);
+      setTimeout(function () {
+        setScore(score + 1);
+      }, 3500); //run this after 3 seconds
     } else if (
       (strValue == 'scissors' && enemy == 'rock') ||
       (strValue == 'scissors' && enemy == 'spock') ||
@@ -106,16 +108,12 @@ const Home = () => {
   };
 
   const handlePlayAgainClick = () => {
-    //Router.reload(window.location.pathname);
-
     console.clear();
     setChoices({ display: 'flex' });
     setFight({ display: 'none' });
     setTie(false);
     setRandomUrl(choicesArray[Math.floor(Math.random() * choicesArray.length)]);
   };
-
-  const handleNumberChange = () => {};
 
   return (
     <>
@@ -126,7 +124,7 @@ const Home = () => {
       </Head>
       <Background />
       <div className='main'>
-        <Board score={score} handleNumberChange={handleNumberChange} />
+        <Board score={score} />
         <Choices
           style={choices}
           handleScissorsClick={() => handleClick(Scissors)}
