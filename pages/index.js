@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import Router from 'next/router';
 
 //Components
 import Board from '../components/Board';

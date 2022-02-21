@@ -578,7 +578,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  cursor: pointer;
   border-radius: 100px;
   position: absolute;
 }

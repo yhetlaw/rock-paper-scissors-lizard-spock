@@ -1,14 +1,36 @@
+import Image from 'next/image';
 import { useState } from 'react';
+import { Modal, Button } from 'react-bootstrap';
+//Images
+import modal from '../images/image-rules-bonus.svg';
+
+const MyVerticallyCenteredModal = (props) => {
+  return (
+    <Modal {...props} size='md' aria-labelledby='contained-modal-title-vcenter' centered>
+      <Modal.Header closeButton>
+        <Modal.Title id='contained-modal-title-vcenter'>Rules</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Image src={modal} width={500} height={500} alt='rules' />
+      </Modal.Body>
+    </Modal>
+  );
+};
 
 const Rules = () => {
-  const { modal, setModal } = useState();
+  const [show, setShow] = useState(false);
 
-  const onClickHandler = () => {};
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
-    <div className='rules' onClick={onClickHandler}>
-      Rules
-    </div>
+    <>
+      <Button className='rules' onClick={handleShow}>
+        Rules
+      </Button>
+
+      <MyVerticallyCenteredModal show={show} onHide={handleClose} />
+    </>
   );
 };
 
