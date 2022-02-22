@@ -118,7 +118,10 @@ const Home = () => {
         <title>Rock, paper, scissors, lizard, spock</title>
         <meta name='description' httpEquiv='X-UA-Compatible' content='Rock, paper, scissors, lizard, spock' />
         <link rel='icon' href='/icon.png' />
-        <link rel='preload' href='/fonts/inter-var-latin.woff2' as='font' type='font/woff2' crossOrigin='anonymous' />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap'
+          rel='stylesheet'
+        />
       </Head>
       <Background />
       <div className='main'>
