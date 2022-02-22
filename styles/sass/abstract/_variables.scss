@@ -43,3 +43,10 @@ $mobile: 450px;
     @content;
   }
 }
+
+$weirdPhones: 780px;
+@mixin weirdPhones {
+  @media (max-height: #{$weirdPhones}) {
+    @content;
+  }
+}
