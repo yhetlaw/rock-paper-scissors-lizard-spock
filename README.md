@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live site Url](https://rock-paper-scissors-lizard-spock-theta.vercel.app/)
+- Live Site URL: [rock-paper-scissors-lizard-spock](https://rock-paper-scissors-lizard-spock-theta.vercel.app/)
 
 ## My process
 
